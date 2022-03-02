@@ -1,0 +1,111 @@
+import java.util.*;
+
+public class Matrices {
+	
+	
+	public static int[][] litMatrice(){
+		
+		Scanner scanner = new Scanner(System.in); 
+		
+		System.out.println("ENTRER LE NOMBRE DE LIGNES DE LA MATRICE"); int m = scanner.nextInt(); 
+		System.out.println("ENTRER LE NOMBRE DE COLONNES DE LA MATRICE"); int n = scanner.nextInt(); 
+		
+		int[][] a = new int[m][n]; 
+		
+		for(int i = 0 ; i < m ; i++) {
+			for(int j = 0 ; j < n ; j++ ) {
+				
+				System.out.println("ENTRER LA VALEUR DE ( "+i+" , "+j+" )" ); 
+				a[i][j] = scanner.nextInt();
+			}
+		}
+		
+		return a; 
+	}
+
+	public static void afficheMatrice(int[][] a) {
+
+				
+		for(int i = 0 ; i < a.length ; i++) {
+			for(int j = 0 ; j < a[0].length ; j++ ) {
+				
+				System.out.print(a[i][j] + " "); 
+				
+			}
+			System.out.println("");
+		}
+	} 
+	
+	public static void ajouterMatrices(int[][] a, int[][] b){
+		
+		int[][] result;
+		result = new int[a.length][a[0].length]; 
+			
+		for(int i = 0 ; i < a.length ; i++) {
+			for(int j = 0 ;  j <a[0].length ; j++) {
+				result[i][j] = a[i][j] + b[i][j]; 
+			}
+		}
+		
+		afficheMatrice(result); 
+			 
+		
+	}
+	
+	public static int[][] produitParEntier(int[][] a , int x) {
+	
+		int[][]result = new int[a.length][a[0].length]; 
+		
+		for(int i = 0 ; i < a.length ; i++) {
+			for(int j = 0 ;  j <a[0].length ; j++) {
+				result[i][j] = a[i][j] * x; 
+			}
+		}
+		
+		
+		return result; 
+	}
+	
+	public static int[][] transposeMatrice(int[][] a){
+		
+		int[][] result = new int[a[0].length][a.length];
+		
+		for(int i = 0 ; i < a[0].length ; i++) {
+			
+			for(int j = 0 ; j<a.length ; j++) {
+				
+				result[i][j] = a[j][i]; 
+			}
+			
+		}
+		
+		return result; 
+	}
+	
+	public static int[][] produitMatrices(int[][] a, int[][] b){
+		
+		int[][] result = new int[a.length][b[0].length]; 
+		
+		for(int i = 0 ; i < a.length ; i++) {
+			for(int k = 0 ; k < b[0].length ; k++) {
+				for(int j = 0 ; j < a[0].length ; j++) {
+					result[i][k] += a[i][j] * b[j][k] ; 
+				}
+			}
+		}
+		
+		return result; 
+	}
+	
+	public static void main(String[] args) {
+		
+	/*	int[][] maMatrice1 =  litMatrice(); 
+		System.out.println("");
+		int[][] maMatrice2 =  litMatrice();
+		System.out.println(""); 
+		afficheMatrice(produitMatrices(maMatrice1,maMatrice2)); */
+		
+		
+	}
+
+}
